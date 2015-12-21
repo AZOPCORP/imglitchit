@@ -1,2 +1,273 @@
-# imglitchit
-Javascript image Glitching
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="utf-8">
+                <meta property='og:image' content='http://azopcorp.com/assets/img/1450694657146_glitched.jpg' />
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+                <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+            
+                <link href=" http://azopcorp.com/assets/css/brokenbootstrap.css" rel="stylesheet" type="text/css">
+                <link href=" http://azopcorp.com/imglitchit/style" rel="stylesheet" type="text/css">
+               <title >AZOPCORP.COM || IMGLITCHIT</title>
+        </head>
+
+        <body>
+                <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+                        <div class="container">
+                                <div class="navbar-header">
+                                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>                                                <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                                        <a class="navbar-brand" href="http://azopcorp.com"><span><img class="logo img-responsive"src="http://azopcorp.com/assets/img/logo02.png"/></span></a>                                        </div>
+                                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                                        <ul class="nav navbar-nav">
+                                                <li>
+                                                        <li> <a href=" http://azopcorp.com/blog">BLOG</a></li>
+                                                </li>
+                                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">APPS<b class="caret"></b></a>
+                                                        <ul class="dropdown-menu">
+                                                                <li> <a class="active" href=" http://azopcorp.com/brokenkam">BROKENKAM</a></li>
+                                                                <li><a href=" http://azopcorp.com/j2w">JPEG 2 WAV</a></li>
+                                                                <li><a href=" http://azopcorp.com/amenpi">AMEN_PI</a></li>
+                                                                <li><a href=" http://azopcorp.com/gbc">GREEN BOY CAMERA</a></li>
+                                                                <li><a href=" http://azopcorp.com/unstaglitch">UNSTAGLITCH</a></li>
+                                                                 <li><a href=" http://azopcorp.com/imglitchit">IMGLITCHIT</a></li>
+                                                        </ul>
+                                                </li>
+                                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">MISC<b class="caret"></b></a>
+                                                        <ul class="dropdown-menu">
+                                                                <li><a href=" http://azopcorp.com/player">PLAYER</a></li>
+                                                                <li><a href=" http://azopcorp.com/releases">RELEASES</a></li>
+                                                                <li><a href=" http://azopcorp.com/instagram">INSTAGRAM</a></li>
+                                                                <li><a href=" http://azopcorp.com/gallery">GALLERY</a></li>
+                                                                <li><a href=" http://azopcorp.com/downloads">DOWNLOADS</a></li>
+                                                                <li><a href=" http://azopcorp.com/about">ABOUT</a></li>
+                                                                <li><a href=" http://azopcorp.com/links">LINKS</a></li>
+                                                </li>
+                                                <li><a href=" http://azopcorp.com/contact">CONTACT</a></li>
+                                                </ul>
+                                </nav>
+                        </div>
+                </header>
+                <div class="jumbotron">
+                        <div class="container">
+                                <h1 style="text-align: center;background:#FFF;">IMGLITCHIT <h3><small class="smalltitle" style="text-align: center;background:#FFF;">Glitch your local images using the <a href="http://azopcorp.com/unstaglitch">Unstaglitch algorithms.</a></small><h3></h1></div>
+                        <div class="row" style="padding: 2%;">
+                                <div class="col-sm-12" style="text-align: center;"> </div>
+                        </div>
+                </div>
+                </div>
+                <div class="section app">
+                        <div class="container">
+<div class="row"><div class="col-lg-12 col-md-12 col-sx-12"> <img id="imagex" class="img img-responsive" src="" alt="INPUT IMG"> </div></div>
+
+                         <div class="row">
+                
+     <div id="link"></div>
+     
+                <div class="col-lg-2 col-md-2 col-sx-6" style="display:block;z-index:99;">
+                        <div id="ctrl"> Choose a JPEG / PNG / GIF file:<br>
+                              <input type='file' id='imgfile' /> <input type='button' id='btnLoad' value='Load' onclick='loadImage();' /><br>
+                                <br> Slicer: <span id="num">0</span>
+                                <br><br>
+                                <input s id="slices" type="range" min="0" max="128" step="4" value="0">
+                                <br>
+                               <br>
+                                <label>
+                                 Lateral destroyer: <input id="latcheck" type="checkbox" onchange="makesld();"></label>
+                                <div id="latsld"></div>
+                                <br><br>
+                                <label>
+                                  Base64 anihilator: <input id="basecheck" type="checkbox" onchange="makebsld();"></label>
+                                <div id="basesld"></div>
+                                <br><br>
+                                <label>Sin pixel stretcher:<input id="wavecheck" type="checkbox" onchange="makewavesld();"</label>
+                                <div id="wavesldbx"></div>
+                                <br><br>
+                                <label>
+                                   Scanlines: <input id="scancheck" type="checkbox" checked></label>
+                                <br><br>
+                                <label>Jpeg reducer</label>
+                                <br>
+                             
+                                <br>
+                                <label>Reductor: <span id="qual2">0</span></label>
+                                <input id="qualityloop" type="range"
+                                min="0" max="1" step="1" value="0">
+                                <br>
+                                <br>
+                                <button class="btn" id="ok">GLITCH IT!</button><br><small>If the image is not loading at first click Glitch it again and it should work</small>
+                                 
+                        <br> 
+                                <div id="msgbox"></div>
+                                <br>
+                        </div>
+                        <script>
+$('#slices').change(function() {
+        //alert();
+        $('#num').html($('#slices').val());
+});
+$('#qualityslider').change(function() {
+        //alert();
+        $('#qual1').html($('#qualityslider').val());
+});
+$('#qualityloop').change(function() {
+        //alert();
+        $('#qual2').html($('#qualityloop').val());
+});
+                        </script>
+
+
+                        <script>
+$("#ok").click(function() {
+      
+                        init();
+                
+        
+});
+$(function() {
+        $('input[type=checkbox]').prop("checked", false);
+});
+
+
+   function loadImage() {
+        var input, file, fr, _img;
+
+        if (typeof window.FileReader !== 'function') {
+            write("The file API isn't supported on this browser yet.");
+            return;
+        }
+
+        input = document.getElementById('imgfile');
+        if (!input) {
+            write("Um, couldn't find the imgfile element.");
+        }
+        else if (!input.files) {
+            write("This browser doesn't seem to support the `files` property of file inputs.");
+        }
+        else if (!input.files[0]) {
+            write("Please select a file before clicking 'Glitch It'");
+        }
+        else {
+            file = input.files[0];
+            fr = new FileReader();
+            fr.onload = createImage;
+            fr.readAsDataURL(file);
+        }
+
+        function createImage() {
+            _img = new Image();
+            _img.onload = imageLoaded;
+            _img.src = fr.result;
+           // _img.setAttribute('class','img img-responsive');
+            var bx=document.getElementById('image');
+          //  bx.innerHTML="";
+            //bx.appendChild(_img);
+        }
+
+        function imageLoaded() {
+            var canvas = document.createElement("canvas")
+            canvas.width = _img.width;
+            canvas.height = _img.height;
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(_img,0,0);
+            var srcx = canvas.toDataURL("image/png")
+           $('#link').html(srcx);
+
+           $("#imagex").attr("src", srcx); 
+           //alert($('#link').html());
+        }
+
+        function write(msg) {
+           alert(msg);
+        }
+    }
+
+                        </script>
+
+                     </div>
+ </div>                    <br>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sd-12">
+      
+                <div id="output"> </div>
+                <br>
+                <br> 
+
+        </div>
+    </div>                 
+</div>
+                           
+                        </div>
+                </div>
+
+                <script type="text/javascript" src="http://azopcorp.com/imglitchit/imglitch"></script>
+                <footer class="section section-primary style">
+                        <div class="container">
+                                <div class="row">
+                                        <div class="col-sm-6">
+                                                <h1>COPYLEFT <a href="http://azopcorp.com">AZOPCORP</a> 2015 </h1>
+                                                <p> Please show some love!</p>
+                                                <p> Share, like and follow on your favorite social network!</p>
+                                                <p>If you have any sugestions, demands, ideas to share, or whatever,
+                                                        feel free to<a href="http://azopcorp.com/contact"> contact me.</a></p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <p class="text-info text-right">
+                                                        <br>
+                                                        <br> </p>
+                                                <div class="row">
+                                                        <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-md-12 hidden-xs text-right">
+                                                                <a href="http://facebook.com/azopcorp"> <img class="img  social" name="facebook10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAflBMVEUAAAACAAIAAAABAAIAAAAAAAMAAAIBAAIAAAACAAIAAAABAAICAAIAAAAAAAACAAIAAAMBAAIBAAECAAIBAAIBAAMBAAMBAAMAAAIAAAMAAAMAAAAAAAABAAIBAAECAAICAAICAAIAAAIAAAMAAAAAAAAAAAAAAAAAAAABAAJme/hGAAAAKXRSTlMAiCD4OFB8+ymZA8ySLwajR+O4qPHIx8FvZWEUENisj4OBalg7OiIWC1uOM0YAAAD2SURBVFjD7dfJjsIwEEXRlxg8xHGmppux57H+/weboBAIAclOrZB89z52Sd4U9un8UVBw4inXaMukoIkJmQGQxEgCTnEA5WDIu0UpN5Xepq76TJbd3AaWPHuoCpyVJdRmIcgr+4Vh3dMFPK8vcFlDh+B3PsOoOgCodxhVqABghXGa/AH1i3FVANDgSqsA4HUw+7psyreNzgOABKd2z8e5JgIl9U0DaiawJSaQRiAcwM0WTOCP+4IfLvDNBeZc4IMLvHMB4wnM2lL0FbOu5d185QhEIAIRiMCdAYIHCFgeYGF4gIFTHEA5n9X3Zd63pmGSv3yz1/9/jS76lTrFjx8AAAAASUVORK5CYII="
+                                                                        /></a>
+                                                                <a href="http://soundcloud.com/azopcorp">
+                                                                <img class="img  social" name="soundcloud8" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAq1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0NbREAAAAOHRSTlMAOID7VO+xm5fiznZr18XBLYN8ZlhJQyciBvOsiXBfGRQPT8m3p5+Ti2Iz56SQPx723LuPDALRs4rsh+wAAAIeSURBVFjD7dfpjpswFAXgQ8DYhJ2w7yH7vs/w/k9WJlXVhCYNDVKlqhwLiR/oExhfWxcQ+nz5Zvi+AAhlqwjotwP64NsBPMqW6YAO6ID/CiD6ZqOTt4GJj2v8hLwDFCcOP5JFfwwokr/g8DMF3xTgr0/uEe3SWwBJM4BK1lyzyjHBJLPvAIgNAJN3xYE84zRIWOfCPTCUXgMZ4SZpMjd0qKDD4h5A7xUwL4er5dQemN4YI7DAqQHLV0BWBgeDFanlizhidnFrAFa/B/iAx4c/d2w5iyAixrYOMG120sMHQKiGYrkiINB2plskwzUm6IHj8CBnWgdWkjZXF8SVoOKYW5yjBFNQyFhyeBi7BohrMdEd1VChQzwny+0CDCcoMJ4AmN4CUp+ZzI6WWj5ChEmgGJyNGCZSeM+AYXgDfM6sgbllu+vEg2LhGQIsyBDgPwOg3wAbJXUVzwwYGCzEsHdeAaUaDnZPgfgGkIXCSHMZJnpIqkvIfAeDarjIGgFMHjiJEZ8p1tiAXhbe0q4cCym8Rp9wnPaU2KG+eBlhDHEoc+4goGCQwTWaRCLR+XQhclou4QDNjx1BzicQsQncJr+xyjgaW5qgGiH4QDXoVzF9YgSaC0+AtLaQ9uEHOyjErYopJ9vo+36wQuQp24fvv35QTHwplf1SL8flaH+Qwq9bSlSi9n4JG+3/sZOpAzqgA/4G0LrxbN36tm6+W7f/3wDKZ9XCmLW5VQAAAABJRU5ErkJggg=="
+                                                                        /></a>
+                                                                <a href="http://instagram.com/azopcorp">
+                                                                <img class="img social" name="instagram12" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAqFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs30iGAAAAN3RSTlMAWDgg8xACQK4e3HepwLPP+O7pvWsK39SWhX5qZS0YBuSkXUmZkIp6cmJORDTIfDooDcS1nX9uGBGOoAAAAgFJREFUWMPt13lv2jAYx/EfYEwgLAn3DS3QUo6u7a7n/b+zLbM9M5LH1FiaNKmfv5ASf3v4QEauOY1a5KkVTZtQZF/QTURfIpfQzZJ8/IwCzICaCAmIGmIKEqMdFmjDZ/7E+NT8rTZPzWyCPKzxhxyS4hPoDGDFNwQ+4UzjI/CfBsQbrAkf4PXt+FX3PYFO9BA/Pba7ZESHqvL5jq4Heg0J5cRvWT4g5jhz6PoGvjbxl/q9X6CNgkefwF0dBavUI3BEiUX27sADSj25Aov6LzX1OaujlNRT0cjfPV4EavkbVb0AwPimnlf0u8XA2pz1jIp6/p0NTMxPYLyo5/dsINJ/Ixj6f5SyAT3TGzBe9R5jAz31eQ+GPkSGbECv9wkYc/X8Cxcwy30ERqI3ChuYk/KKUvVM/4ZsYGlOT4kyZkdX2QCeybGUKmargg/EpGQLFCw7pIwdgaUgZVTYT4MeaQtHADvSupWLJTAkbQtXYDC0R/jSDn/bkiGWzgA2Z98KkxepjiL1LaDMwAeKx44Y9XqjTuGwcgYwJodEXg9IRyEagA9Y+4wZvwNcAeuUUonhBlcClly36EK3v8L1gLVat4UdnSXzAeARUI3jbhw9p8l2erCj3QHePwhs4Gl/EYjgR6YmYOZr9KPiITbDWsFXnuBLV/C1L/TiGXz1Db98B1//fwK9vT3EmfiY4wAAAABJRU5ErkJggg=="
+                                                                        /></a>
+                                                                <a href="http://github.com/azopcorp">
+                                                                <img class="img  social" name="github10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAolBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgESU6AAAANXRSTlMACPwF+AwTv5bNs4Q4L/Hr4t/Hnocf59pnWVE8DvS5kGsaELZ5Y0lBNCXtpE4p1adGiXBucapdyAcAAAKlSURBVFjDpdbpeqowEAbgjx1UENuqICrWfa22PXP/t3b6yDFOZEk8ff9FmzGdGTKgkdMPw76D//E+ardik67MuNUevT+1+/uFSl6+dWN0FiZVMhcdne1TajBVhXAPpHBw0eA4IKXBEXWsV9LyaqHS2CNN3hgV+h+k7aNfUfuYnhCXesIJ6CmB85C/BT1pIWfykzTdm/RTaj/xuWtlb4PaFlhu0RehWFMaQ5He63Il1lwvMfBDJHtoiAD5vUdQSLtkB/4ySS+XNFn6gU3dlYWrM93kogNsuknEQ7G1pCRvxSMwoxv71g2sgzMoZaynSwegFEopPR7Bp7s3KL3RnX/99/Z014JSi+72FoC1dPFBSbou19cUMhsobYjkNO7ltRr/xT2wY8uuCw1ul23Z8arQF7R8sS2pVJWO5uDgdZeq4kCLw+vOq9KDph6v+1DRRYpeGoKl9ABNB1Y42Io2VDSjjYhH08NPHaH3uyr0wOdBCC0hnw/grwMjaBnxFwacFdeJ4ko5Y8lW0Rwa5hHbskRGTBsa2sRkMOwnj+DyA9gG4D15hJwYT5xIN4KVl/58R5JWYzeNFyTZ4ceUJEHDxXoZkmRavNsVT9IovWXjYzauLN+f0tA+svth6AJZlwoTL1/x6Wp1Vrk3KQ98ad7GIRCyO37BUxdQlRn+Kb6ONkBH/MzABXOyqSzAzdYs9syBo8nmJuNTibnlX4tNSfWTmVCJz8sbFzHfAWT5wI6nK6P8WiGLpVKFE8W97NKDSQjJ2uR5LTMeE7CGwGtpryy9ALPae2aw3OzG7m5TEUB1dyUmMUZDADNBpTVvVqc+wGSNGiEbEuPaAL0QtYy2aNl5TQC7baDJyaOCWx3AO6nHhld1Asu8btcbPSc/onN5pEf+CbocR/WZ8BfLI2OamjblnwAAAABJRU5ErkJggg=="
+                                                                        /></a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </footer>
+
+
+                <script type="text/javascript">
+
+                </script>
+                <script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+        var u = "//azopcorp.com/piwik/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['trackAllContentImpressions']);
+        _paq.push(['setSiteId', 1]);
+        var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
+})();
+                </script>
+                <noscript>
+                        <p><img src="//azopcorp.com/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p>
+                </noscript>
+                <img src="http://azopcorp.com/piwik/piwik.php?idsite=1&rec=1&action_name=brokenkam" style="border:0"
+                alt="" /> </body>
+
+</html>
